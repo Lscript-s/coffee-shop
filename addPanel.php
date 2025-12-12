@@ -18,9 +18,9 @@ if (isset($_POST['save'])) {
         $sql = "INSERT INTO product (product_name, product_price, image_file_name, archived)
                 VALUES ('$name', '$price', '$image', 0)";
     } elseif ($category == 'music') {
-        $title = $_POST['music_title'];
-        $file_name = $_POST['music_file_name'];
-        $sql = "INSERT INTO music (title, file_name, archived)
+        $music_title = $_POST['music_title'];
+        $music_file_name = $_POST['music_file_name'];
+        $sql = "INSERT INTO music (music_title, music_file_name, archived)
                 VALUES ('$music_title', '$music_file_name', 0)";
     }
 
@@ -95,12 +95,12 @@ if (isset($_POST['save'])) {
 
                     <?php elseif ($category == 'music'): ?>
                         <div class="form-group">
-                            <label for="title">Music Title *</label>
-                            <input type="text" name="title" id="title" placeholder="e.g., Smooth Jazz Vibes" required>
+                            <label for="music_title">Music Title *</label>
+                            <input type="text" name="music_title" id="music_title" placeholder="e.g., Smooth Jazz Vibes" required>
                         </div>
                         <div class="form-group">
-                            <label for="file_name">Music File Name *</label>
-                            <input type="text" name="file_name" id="file_name" placeholder="e.g., smooth_jazz_vibes.mp3" required>
+                            <label for="music_file_name">Music File Name *</label>
+                            <input type="text" name="music_file_name" id="music_file_name" placeholder="e.g., smooth_jazz_vibes.mp3" required>
                             <small>Ensure the music file is uploaded to the 'music' folder.</small>
                         </div>
 
