@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5dc;
+            background-color: #f2f1dc; /* slightly softer beige */
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -48,109 +48,118 @@ if (isset($_POST['login'])) {
         }
 
         .login-container {
-            max-width: 450px;
+            max-width: 460px;
             width: 100%;
-            background-color: white;
-            border: 3px solid #4a2c2a;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            background-color: #ffffff;
+            border: 2px solid #4a2c2a;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
         }
 
         .login-header {
-            background-color: #c9a961;
-            padding: 40px 30px;
+            background-color: #d1b46f; /* warmer gold */
+            padding: 35px 30px;
             text-align: center;
-            border-bottom: 3px solid #4a2c2a;
+            border-bottom: 2px solid #4a2c2a;
         }
 
         .login-header h1 {
             color: #4a2c2a;
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 2.1em;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
         .login-header p {
-            color: #4a2c2a;
-            font-size: 1em;
+            color: #5a3a35;
+            font-size: 0.95em;
             font-style: italic;
         }
-
-        .coffee-icon {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
+        
         .login-body {
-            padding: 40px 30px;
-            background-color: #f5f5dc;
+            padding: 38px 30px;
+            background-color: #f6f4e8;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         .form-group label {
             display: block;
             color: #4a2c2a;
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 1em;
+            margin-bottom: 6px;
+            font-size: 0.95em;
         }
 
         .form-group input {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #c9a961;
-            border-radius: 5px;
+            padding: 13px 16px;
+            border: 2px solid #d1b46f;
+            border-radius: 6px;
             font-size: 1em;
-            font-family: Arial, sans-serif;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .form-group input:focus {
             outline: none;
             border-color: #4a2c2a;
+            box-shadow: 0 0 0 2px rgba(74, 44, 42, 0.15);
         }
 
         .error-message {
-            background-color: #f8d7da;
-            color: #721c24;
+            background-color: #f9d9dc;
+            color: #7a1f28;
             padding: 12px;
-            border: 2px solid #f5c6cb;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            border: 1px solid #f3b8bf;
+            border-radius: 6px;
+            margin-bottom: 18px;
             text-align: center;
             font-weight: bold;
+            font-size: 0.9em;
         }
 
         .btn-login {
             width: 100%;
             padding: 15px;
             background-color: #4a2c2a;
-            color: white;
+            color: #ffffff;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .btn-login:hover {
             background-color: #6b4423;
+            transform: translateY(-1px);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
         }
 
         .login-footer {
-            background-color: #c9a961;
-            padding: 20px;
+            background-color: #d1b46f;
+            padding: 18px;
             text-align: center;
-            border-top: 3px solid #4a2c2a;
+            border-top: 2px solid #4a2c2a;
         }
 
         .login-footer p {
             color: #4a2c2a;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             font-size: 0.9em;
         }
 
@@ -158,51 +167,53 @@ if (isset($_POST['login'])) {
             color: #4a2c2a;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         .login-footer a:hover {
-            text-decoration: underline;
+            color: #6b4423;
         }
 
         .back-link {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 18px;
         }
 
         .back-link a {
             color: #4a2c2a;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s ease, letter-spacing 0.2s ease;
         }
 
         .back-link a:hover {
             color: #6b4423;
+            letter-spacing: 0.5px;
         }
 
         /* Responsive */
         @media (max-width: 480px) {
             .login-header h1 {
-                font-size: 1.5em;
+                font-size: 1.6em;
             }
 
             .coffee-icon {
-                font-size: 2.5em;
+                font-size: 2.6em;
             }
 
             .login-body {
-                padding: 30px 20px;
+                padding: 28px 20px;
             }
         }
+
     </style>
 </head>
 <body>
 
 <div class="login-container">
     <div class="login-header">
-        <div class="coffee-icon">☕</div>
         <h1>Jake's Coffee Shop</h1>
-        <p>Administration Login</p>
+        <p>Admin CMS Login</p>
     </div>
 
     <div class="login-body">
@@ -224,12 +235,12 @@ if (isset($_POST['login'])) {
             </div>
 
             <button type="submit" name="login" class="btn-login">
-                🔐 Login to Admin Panel
+                Login
             </button>
         </form>
 
         <div class="back-link">
-            <a href="index.html">← Back to Website</a>
+            <a href="index.html">Back to Website</a>
         </div>
     </div>
 
